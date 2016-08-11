@@ -15,7 +15,11 @@ Template code is provided in the `smartcab/agent.py` python file. Additional sup
 In a terminal or command window, navigate to the top-level project directory `smartcab/` (that contains this README) and run one of the following commands:
 
 ```python smartcab/agent.py```
+
 ```python smartcab/random_agent.py```
+
 ```python smartcab/informed_agent.py```
+
 ```python smartcab/q_agent.py```
+
 ```python smartcab/parameter_search.py```
