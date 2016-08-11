@@ -137,7 +137,7 @@ def run(alpha=default, gamma=1.0, epsilon=default, initial_value='zero', sim_num
     e.set_primary_agent(a, enforce_deadline=True)
 
     # Now simulate it
-    sim = Simulator(e, update_delay=0.0, display=False)
+    sim = Simulator(e, update_delay=0.5, display=True)
     sim.run(n_trials=100)
 
     # Print # of successful trips
@@ -147,13 +147,20 @@ if __name__ == '__main__':
     reached_destination = []
     results = []
     script_dir = os.path.dirname(__file__)
-    # path = os.path.join(script_dir, '../results/optimal_policy.json')
-    # run(alpha=decay, gamma=0.1, epsilon=cross_entropy, initial_value='zero', sim_num=1)
-    # pd.DataFrame(results).to_json(path)
-    # print(path)
+    path = os.path.join(script_dir, '../results/optimal_policy.json')
 
-    path = os.path.join(script_dir, '../results/optimal_policy_sim_1000.json')
-    for sim in range(1000):
-        run(alpha=decay, gamma=0.1, epsilon=cross_entropy, initial_value='zero', sim_num=sim)
+    # Comment this code out if you run one of the other options below
+    run()
+
+    # Uncomment below to run optimal agent - be sure to comment the run() above
+    # run(alpha=decay, gamma=0.1, epsilon=cross_entropy, initial_value='zero', sim_num=1)
+
+
+    # Uncomment to simulate 1000 experiments - be sure to comment the run() above
+    # path = os.path.join(script_dir, '../results/optimal_policy_sim_1000.json')
+    # for sim in range(1000):
+    #     run(alpha=decay, gamma=0.1, epsilon=cross_entropy, initial_value='zero', sim_num=sim)
+    
+    # Save results to json file
     pd.DataFrame(results).to_json(path)
     print(path)
