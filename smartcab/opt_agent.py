@@ -141,11 +141,12 @@ if __name__ == '__main__':
     reached_destination = []
     results = []
     script_dir = os.path.dirname(__file__)
-    path = os.path.join(script_dir, '../results/optimal_agent.json')
+    path = os.path.join(script_dir, '../results/opt_agent_sim_1000.json')
 
-    # Run below to run optimal agent
-    run(alpha=decay2, gamma=constant, epsilon=cross_entropy, initial_value='zero', sim_num=1)
-
+    # simulate 1000 experiments
+    for sim in range(1000):
+            run(alpha=decay2, gamma=constant, epsilon=cross_entropy, initial_value='zero', sim_num=sim)
+    
     # Save results to json file
     pd.DataFrame(results).to_json(path)
     print(path)

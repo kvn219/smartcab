@@ -37,13 +37,28 @@ def best_choice(state):
     return choice
 
 
-def quadratic(t):
-    return t ** 2
+# Alphas
+def decay1(t):
+    return 1 / (t + 1)
 
 
-def neg_log(t):
-    return 1 - np.log(t + 1)
+def decay2(t):
+    return 1 / (t + 2)
 
+
+def decay4(t):
+    """TODO: Explore 1 - (1/sqrt(t+x) as a parameter for gamma"""
+    return 1 - (1/np.sqrt(t + 3))
+    # return 1 - (1/np.sqrt(t))
+    # return 1 - (1/np.log(t+3))
+    # return 1-(t/np.exp(t + 10))
+
+
+def constant(t):
+    return 0.1
+
+
+# Epsilons 
 
 def sigmoid(x):
     return 1 / (1 + np.exp(-x))
@@ -53,18 +68,19 @@ def cross_entropy(t):
     return -np.log(sigmoid(t + 2))
 
 
-def decay(t):
-    return 1 / np.log(t + 2)
-
-
-def default(t):
-    return 1.0
+def arithmetic_average(t):
+    """Learning Rate for Stationary"""
+    if t == 0:
+        return 1
+    else:
+        return 1 / t
 
 
 def detect_function(f):
-    if f is cross_entropy:
-        return "Cross Entropy"
-    elif f is standard_prob:
-        return "Standard"
-    elif f is default:
-        return "One"
+    try:
+        if f is cross_entropy:
+            return "Cross Entropy"
+        elif f is constant:
+            return "One"
+    except:
+        return "Unknown"
