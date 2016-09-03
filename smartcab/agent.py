@@ -118,6 +118,7 @@ class LearningAgent(Agent):
         s2 = self.env.act(self, action)
         self.q_table[self.state][action] = self.q_learn(s1, s2, self.time)
 
+
 def run(alpha=constant, gamma=constant, epsilon=constant, initial_value='random', sim_num=1):
     """Run the agent for a finite number of trials."""
 
