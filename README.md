@@ -6,8 +6,12 @@
 This project requires **Python 2.7** with the [pygame](https://www.pygame.org/wiki/GettingStarted
 ) library installed
 
+<p align="center">
+  <img src="https://github.com/kvn219/smartcab/blob/master/figures/smartcab.gif">
+  <a href="#">Report</a>
+  <br><br>
+</p>
 
-![alt text](https://github.com/kvn219/smartcab/blob/master/figures/smartcab.gif)
 
 ### Code
 
