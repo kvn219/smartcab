@@ -1,5 +1,5 @@
-# Project 4: Reinforcement Learning
-## Train a Smartcab How to Drive
+# Training a Smartcab How to Drive with Reinforcement Learning
+## A Udacity Project
 
 ### Install
 
