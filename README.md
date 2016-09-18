@@ -1,4 +1,4 @@
-# Training a Smartcab How to Drive with Reinforcement Learning
+# Training a Smartcab with Reinforcement Learning
 ## A Udacity Project
 
 ### Install
