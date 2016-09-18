@@ -1,5 +1,6 @@
 # Training a Smartcab with Reinforcement Learning
-## A Udacity Project
+
+Udacity Project 4
 
 ### Install
 
